@@ -67,8 +67,8 @@ def fichier():
     b=[]
     for i in range(len(a)):
         c="Cleaned_"
-        c+=a[i][9:]
-        b.append(c)
-        print(b)
+        for j in range(9,len(a[i]):
+            c+=a[i][j]
+        b.append(c)    
 fichier()   
     
