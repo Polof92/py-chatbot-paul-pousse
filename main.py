@@ -36,8 +36,20 @@ def prenom(a):
     print(set(a))
 prenom(tab)
 
-def translation():
-    with open("speeches.txt","w") as f2:
-        for elem in speeches:
-            f2.write(elem)
-            ananasdufutur est le meilleurs pseudo
+def convertir(f,f2):
+    with open(f,"r") as f3,open(f2,"w") as f4:
+        c=f3.readlines()
+        for i in range(len(c)):
+            a=""
+            for j in range(len(c[i])):
+                if ord(c[i][j])>64 and ord(c[i][j])<91:
+                    a+=chr(ord(c[i][j])+32)
+                else:
+                    a+=c[i][j]
+            f4.write(a)
+
+    return f4
+
+a="./speeches/Nomination_Chirac1.txt"
+b="Cleaned_Chirac.txt"
+print(convertir(a,b))
