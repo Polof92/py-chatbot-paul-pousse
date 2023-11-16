@@ -71,4 +71,5 @@ def fichier():
         for j in range(9,len(a[i])):
             c+=a[i][j]
         b.append(c)    
-fichier()   
+fichier()  
+#files_names mauvais fichier 
