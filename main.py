@@ -5,10 +5,12 @@ def list_of_files(directory, extension):
         if filename.endswith(extension):
             files_names.append(filename)
     return files_names
+# donne le nom des fichiers qui sont dans speeches
 
 directory = "./speeches"
 files_names = list_of_files(directory, "txt")
 print(files_names)
+#appel de la fonction 
 
 def nom_president():
     a=files_names
@@ -19,6 +21,9 @@ def nom_president():
     return a
 tab=nom_president()
 print(tab)
+#créer une liste avec le nom des présidents 
+
+
 def prenom(a):
     for i in range(len(a)):
         if a[i]=="Chirac":
@@ -35,6 +40,7 @@ def prenom(a):
             a[i]="Nicolas"
     print(set(a))
 prenom(tab)
+#remplace leurs noms par lerus prénoms en elevant les doublons 
 
 def convertir(f,f2):
     with open(f,"r") as f3,open(f2,"w") as f4:
@@ -49,7 +55,10 @@ def convertir(f,f2):
             f4.write(a)
 
     return f4
+#copie le texte dans un autre fichier en elevant les majuscules 
 
 a="./speeches/Nomination_Chirac1.txt"
 b="Cleaned_Chirac.txt"
 print(convertir(a,b))
+#test fonction convertir
+
