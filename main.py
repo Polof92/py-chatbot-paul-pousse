@@ -62,3 +62,13 @@ b="Cleaned_Chirac.txt"
 print(convertir(a,b))
 #test fonction convertir
 
+def fichier():
+    a=files_names
+    b=[]
+    for i in range(len(a)):
+        c="Cleaned_"
+        c+=a[i][9:]
+        b.append(c)
+        print(b)
+fichier()   
+    
