@@ -40,7 +40,7 @@ def prenom(a):
             a[i]="Nicolas"
     print(set(a))
 prenom(tab)
-#remplace leurs noms par lerus prénoms en elevant les doublons 
+#remplace leurs noms par leurs prénoms en elevant les doublons 
 
 def convertir(f,f2):
     with open(f,"r") as f3,open(f2,"w") as f4:
@@ -61,4 +61,3 @@ a="./speeches/Nomination_Chirac1.txt"
 b="Cleaned_Chirac.txt"
 print(convertir(a,b))
 #test fonction convertir
-
