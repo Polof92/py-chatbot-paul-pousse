@@ -61,3 +61,14 @@ a="./speeches/Nomination_Chirac1.txt"
 b="Cleaned_Chirac.txt"
 print(convertir(a,b))
 #test fonction convertir
+
+
+def fichier():
+    a=files_names
+    b=[]
+    for i in range(len(a)):
+        c="Cleaned_"
+        for j in range(9,len(a[i])):
+            c+=a[i][j]
+        b.append(c)    
+fichier()   
