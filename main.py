@@ -40,3 +40,4 @@ def translation():
     with open("speeches.txt","w") as f2:
         for elem in speeches:
             f2.write(elem)
+            ananasdufutur est le meilleurs pseudo
