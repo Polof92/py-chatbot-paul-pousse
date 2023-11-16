@@ -68,7 +68,10 @@ def fichier():
     b=[]
     for i in range(len(a)):
         c="Cleaned_"
-        for j in range(9,len(a[i])):
-            c+=a[i][j]
-        b.append(c)    
-fichier()   
+        for j in range(9, len(a[i])):
+            c += a[i][j]
+        b.append(c)
+    return b   
+print(fichier())   
+#files-names muvais fichier 
+
