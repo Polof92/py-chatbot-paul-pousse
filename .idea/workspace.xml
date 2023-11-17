@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="46f93017-7721-4dbb-8fad-3813cf7ad8f1" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cleaned/Cleaned_Chirac1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cleaned/Cleaned_Chirac1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cleaned/Cleaned_Chirac2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cleaned/Cleaned_Chirac2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cleaned/Cleaned_Giscard dEstaing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cleaned/Cleaned_Giscard dEstaing.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cleaned/Cleaned_Hollande.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cleaned/Cleaned_Hollande.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cleaned/Cleaned_Macron.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cleaned/Cleaned_Macron.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cleaned/Cleaned_Mitterrand1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cleaned/Cleaned_Mitterrand1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cleaned/Cleaned_Mitterrand2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cleaned/Cleaned_Mitterrand2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cleaned/Cleaned_Sarkozy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cleaned/Cleaned_Sarkozy.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,14 +27,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/briac/Documents/GitHub/pychatbot-paul-pousse/speeches"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/briac/Documents/GitHub/pychatbot-paul-pousse/speeches&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\briac\Documents\GitHub\pychatbot-paul-pousse\speeches" />
@@ -81,7 +73,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700213655173</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <option name="closed" value="true" />
+      <created>1700215045496</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700215045496</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
