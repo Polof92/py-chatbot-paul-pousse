@@ -68,9 +68,8 @@ def fichier():
     return b
 print(fichier())
 #créer une liste avec le nom des fchiers qu'on a créé
-
-def del_pon(f, f2):
-    with open(f, "r") as f3, open(f2, "w") as f4:
+def del_pon(f):
+    with (open(f, "r") as f3):
         c = f3.readlines()
         a = ""
         for i in range(len(c)):
@@ -81,8 +80,9 @@ def del_pon(f, f2):
                     a += ' '
                 else :
                     a += c[i][j]
-        f4.write(a)
-    return f4
+        f3.write(a)
+    return f3
+
 #enlève la ponctuation
 
 def creation():
