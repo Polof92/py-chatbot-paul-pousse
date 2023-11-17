@@ -58,20 +58,19 @@ def convertir(f,f2):
 #copie le texte dans un autre fichier en elevant les majuscules 
 
 a="./speeches/Nomination_Chirac1.txt"
-b="Cleaned_Chirac.txt"
+b="./Cleaned/Cleaned_Chirac1.txt"
 print(convertir(a,b))
 #test fonction convertir
 
 
 def fichier():
-    a=files_names
+    a = list_of_files(directory, extension)
     b=[]
     for i in range(len(a)):
         c="Cleaned_"
         for j in range(9, len(a[i])):
             c += a[i][j]
         b.append(c)
-    return b   
-print(fichier())   
-#files-names muvais fichier 
+    return b    
+#files-names mauvais fichier 
 
