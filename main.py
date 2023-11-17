@@ -64,7 +64,6 @@ print(convertir(a,b))
 
 
 def fichier():
-    a = list_of_files(directory, extension)
     b=[]
     for i in range(len(a)):
         c="Cleaned_"
