@@ -53,7 +53,6 @@ def convertir(f, f2):
                 else:
                     a += c[i][j]
             f4.write(a)
-
     return f4
 #copie le texte dans un autre fichier en elevant les majuscules
 
@@ -68,6 +67,23 @@ def fichier():
         b.append(c)
     return b
 print(fichier())
+#créer une liste avec le nom des fchiers qu'on a créé
+
+def del_pon(f, f2):
+    with open(f, "r") as f3, open(f2, "w") as f4:
+        c = f3.readlines()
+        a = ""
+        for i in range(len(c)):
+            for j in range(len(c[i])):
+                if (c[i][j] == ',') or (c[i][j] == '.') or (c[i][j] == '!'):
+                    a += ''
+                elif (c[i][j] == ',') or (c[i][j] == chr(39)):
+                    a += ' '
+                else :
+                    a += c[i][j]
+        f4.write(a)
+    return f4
+#enlève la ponctuation
 
 def creation():
     a=fichier()
@@ -77,9 +93,9 @@ def creation():
         d="./speeches/"+c[i]
         with open(b,"w") as f1:
             convertir(d,b)
+            del_pon(d, b)
 creation()
-
-# enlève la ponctuation
+# enlève les majuscules
 def tf(f1):
     with open(f1,"r") as f:
         d={}
