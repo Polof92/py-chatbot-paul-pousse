@@ -100,7 +100,7 @@ def creation():
 creation()
 # enlève les majuscules
 def tf(f1):
-    with open(f1,"r",encoding="utf-8") as f:
+    with open(f1,"r") as f:
         d={}
         a=f.readlines()
         b=[]
@@ -113,11 +113,6 @@ def tf(f1):
                     j += 1
                 b.append(c)
                 j+=1
-    for i in range(len(b)):
-        if b[i] not in d:
-            d[b[i]]=1
-        else:
-            d[b[i]]+=1
-    return d
-a="./cleaned/Cleaned_Chirac1.txt"
+        return b
+a="./speeches/Nomination_Chirac1.txt"
 print(tf(a))
