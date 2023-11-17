@@ -80,3 +80,20 @@ def creation():
 creation()
 
 # enlève la ponctuation
+def tf(f1):
+    with open(f1,"r") as f:
+        d={}
+        a=f.readlines()
+        b=[]
+        for i in range(len(a)):
+            j = 0
+            while j<len(a[i]):
+                c=""
+                while a[i][j]!=" " and j<len(a[i])-1:
+                    c+=a[i][j]
+                    j += 1
+                b.append(c)
+                j+=1
+        return b
+a="./speeches/Nomination_Chirac1.txt"
+print(tf(a))
