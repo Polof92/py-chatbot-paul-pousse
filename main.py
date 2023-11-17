@@ -70,20 +70,22 @@ print(fichier())
 #créer une liste avec le nom des fchiers qu'on a créé
 
 def del_pon(f):
-    with (open(f, "w") as f3):
+    with (open(f, "r") as f3):
         c = f3.readlines()
-        a = ""
-        for i in range(len(c)):
-            for j in range(len(c[i])):
-                if (c[i][j] == ',') or (c[i][j] == '.') or (c[i][j] == '!'):
-                    a += ''
-                elif (c[i][j] == ',') or (c[i][j] == chr(39)):
-                    a += ' '
-                else :
-                    a += c[i][j]
-        f3.write(a)
+        with open(f, "w") as f3:
+            a = ""
+            for i in range(len(c)):
+                for j in range(len(c[i])):
+                    if (c[i][j] == ',') or (c[i][j] == '.') or (c[i][j] == '!') or (c[i][j] == '-') or (c[i][j] == ':') or (c[i][j] == ';') :
+                        a += ''
+                    elif (c[i][j] == ',') or (c[i][j] == chr(39)):
+                        a += ' '
+                    else:
+                        a += c[i][j]
+            f3.write(a)
     return f3
 #enlève la ponctuation
+
 
 
 def creation():
@@ -94,7 +96,7 @@ def creation():
         d="./speeches/"+c[i]
         with open(b,"w") as f1:
             convertir(d,b)
-            #del_pon(d, b)
+            del_pon(b)
 creation()
 # enlève les majuscules
 def tf(f1):

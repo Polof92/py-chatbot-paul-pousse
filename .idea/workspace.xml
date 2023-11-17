@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46f93017-7721-4dbb-8fad-3813cf7ad8f1" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cleaned/Cleaned_Chirac1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cleaned/Cleaned_Chirac1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cleaned/Cleaned_Chirac2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cleaned/Cleaned_Chirac2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cleaned/Cleaned_Giscard dEstaing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cleaned/Cleaned_Giscard dEstaing.txt" afterDir="false" />
@@ -38,7 +39,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/briac/Documents/GitHub/pychatbot-paul-pousse/speeches"
   }
 }]]></component>
@@ -82,6 +83,17 @@
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
