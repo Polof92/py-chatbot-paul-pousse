@@ -57,6 +57,26 @@ def convertir(f, f2):
     return f4
 #copie le texte dans un autre fichier en elevant les majuscules
 
+def fichier():
+    a=os.listdir("./speeches")
+    print(a)
+    b=[]
+    for i in range(len(a)):
+        c="Cleaned_"
+        for j in range(11,len(a[i])):
+            c+=a[i][j]
+        b.append(c)
+    return b
+print(fichier())
 
+def creation():
+    a=fichier()
+    c=os.listdir("./speeches")
+    for i in range(len(a)):
+        b="./cleaned/"+a[i]
+        d="./speeches/"+c[i]
+        with open(b,"w") as f1:
+            convertir(d,b)
+creation()
 
 # enlève la ponctuation
