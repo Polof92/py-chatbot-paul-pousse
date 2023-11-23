@@ -141,5 +141,11 @@ def test_tf():
         listd.append(tf("./cleaned/" + files_names2[i]))
     return listd
 test_tf()
-def idf():
-    for i in range(
+def idf_mot(mot):
+    c=0
+    a=test_tf()
+    for i in range(len(a)):
+        if mot in a[i]:
+            c+=1
+    c=log(1/(c/len(a)),10)
+    return c
