@@ -136,8 +136,10 @@ def tf(f1):
 def test_tf():
     a=0
     b=files_names2
+    listd=[]
     for i in range(len(files_names2)):
-        print(tf("./cleaned/" + files_names2[i]))
+        listd.append(tf("./cleaned/" + files_names2[i]))
+    return listd
 test_tf()
 def idf():
     for i in range(
