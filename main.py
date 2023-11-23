@@ -101,7 +101,16 @@ def creation():
             del_pon(b)
 creation()
 # enlève les majuscules
+def list_of_files2(directory, extension):
+    files_names = []
+    for filename in os.listdir(directory):
+        if filename.endswith(extension):
+            files_names.append(filename)
+    return files_names
 
+directory = "./cleaned"
+files_names2 = list_of_files2(directory, "txt")
+print (files_names2)
 
 def tf(f1):
     with open(f1,"r",encoding="utf-8") as f:
