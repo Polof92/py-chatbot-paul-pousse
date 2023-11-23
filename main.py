@@ -123,9 +123,12 @@ def tf(f1):
         else:
             d[b[i]]+=1
     return d
-a="./cleaned/Cleaned_Chirac1.txt"
-print(tf(a))
 #calcul le score TF
-
+def test_tf():
+    a=0
+    b=files_names2
+    for i in range(len(files_names2)):
+        print(tf("./cleaned/" + files_names2[i]))
+test_tf()
 def idf():
     for i in range(
