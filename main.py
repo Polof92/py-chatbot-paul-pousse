@@ -149,3 +149,32 @@ def idf_mot(mot):
             c+=1
     c=log(1/(c/len(a)),10)
     return c
+def idf():
+    a=test_tf()
+    b=[]
+    for i in  range(len(a)):
+        for cle in a[i].keys():
+            if cle not in b:
+                b.append(cle)
+    return b
+def idf2():
+
+    c=[]
+    b=idf()
+    for i in range(len(b)):
+        c.append(idf_mot(b[i]))
+    return c
+#print(idf())
+
+def tf1():
+    a=test_tf()
+    b=idf()
+    c=idf2()
+    print(b)
+    print(c)
+    for i in range(len(b)):
+        for j in range(len(a)):
+            if b[i] in a[j]:
+                a[j][b[i]]=c[i]*a[j][b[i]]
+    return a
+print(tf1())    
