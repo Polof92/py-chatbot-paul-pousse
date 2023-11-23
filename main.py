@@ -1,4 +1,6 @@
 import os
+import math
+
 def list_of_files(directory, extension):
     files_names = []
     for filename in os.listdir(directory):
@@ -99,6 +101,8 @@ def creation():
             del_pon(b)
 creation()
 # enlève les majuscules
+
+
 def tf(f1):
     with open(f1,"r",encoding="utf-8") as f:
         d={}
@@ -122,3 +126,6 @@ def tf(f1):
 a="./cleaned/Cleaned_Chirac1.txt"
 print(tf(a))
 #calcul le score TF
+
+def idf():
+    for i in range(
