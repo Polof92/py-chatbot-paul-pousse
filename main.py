@@ -193,12 +193,9 @@ def matrice():
    return tab
 #print(matrice())
 
-
-
-
 def affichage_matrice(tab):
     for i in range(len(tab)):
         print(tab[i])
 tab=matrice()
 affichage_matrice(tab)
-                               
+
