@@ -178,3 +178,4 @@ def tf1():
                 a[j][b[i]]=c[i]*a[j][b[i]]
     return a
 print(tf1())
+ def aff_matrice
