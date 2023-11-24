@@ -177,5 +177,28 @@ def tf1():
             if b[i] in a[j]:
                 a[j][b[i]]=c[i]*a[j][b[i]]
     return a
-print(tf1())
- def aff_matrice
+#print(tf1())
+def matrice():
+   a=idf()
+   tab=[]
+   b=tf1()
+   for i in range(len(a)):
+       tab.append([])
+       for j in range(len(b)):
+            if a[i] in b[j]:
+                tab[i].append(b[j][a[i]])
+            else:
+                tab[i].append(-1)
+       tab[i].append(a[i])
+   return tab
+#print(matrice())
+
+
+
+
+def affichage_matrice(tab):
+    for i in range(len(tab)):
+        print(tab[i])
+tab=matrice()
+affichage_matrice(tab)
+                               
