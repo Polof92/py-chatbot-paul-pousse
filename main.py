@@ -202,3 +202,62 @@ def affichage_matrice(tab):
 tab=matrice()
 affichage_matrice(tab)
                                
+def mot_pas_important():
+    a=matrice()
+    b=[]
+    for i in range(len(a)):
+        s=0
+        t=[]
+        for j in range(len(a[i])-1):
+           if a[i][j]!=0:
+               s+=a[i][j]
+        if s==0:
+            b.append(a[i][j+1])
+    return b
+#print(mot_pas_important())
+
+def mot_plus_important():
+    a = matrice()
+    b = []
+    for i in range(len(a)):
+        s = 0
+        t = []
+        for j in range(len(a[i]) - 1):
+            if a[i][j] != 0:
+                s += a[i][j]
+        if s >=2:
+            b.append(a[i][j + 1])
+    return b
+print(mot_plus_important())
+
+def fusion(d1,d2):
+    f={}
+    for cle,valeur in d1.items():
+        f[cle]=valeur
+    for cle2,valeur2 in d2.items():
+        if cle2 in f:
+            f[cle2]+=valeur2
+        else:
+            f[cle2]=valeur
+    return f
+def chirac():
+    a=test_tf()
+    b=fusion(a[0],a[1])
+
+    print(b)
+chirac()
+directory = "./speeches"
+files_names = list_of_files(directory, "txt")
+print (files_names)
+def nation():
+    a=test_tf()
+    imax=0
+    c=-1
+    for i in range(len(a)):
+        for cle,valeur in a[i].items():
+            if 'nation' in a[i] and valeur>imax:
+                imax=valeur
+                c=i
+    d=nom_president()
+    return d[c]
+print(nation())
