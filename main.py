@@ -149,6 +149,7 @@ def idf_mot(mot):
             c+=1
     c=math.log(1/(c/len(a)),10)
     return c
+    #fais l'idf d'un mot
 def idf():
     a=test_tf()
     b=[]
@@ -157,6 +158,7 @@ def idf():
             if cle not in b:
                 b.append(cle)
     return b
+    #fais une liste de tous les mots utilisés dans les fichiers sans doublons
 def idf2():
 
     c=[]
@@ -165,7 +167,7 @@ def idf2():
         c.append(idf_mot(b[i]))
     return c
 #print(idf())
-
+#fais une liste de l'idf de tous les mots utilisés dans les fichiers sans doublons
 def tf1():
     a=test_tf()
     b=idf()
@@ -177,6 +179,7 @@ def tf1():
             if b[i] in a[j]:
                 a[j][b[i]]=c[i]*a[j][b[i]]
     return a
+    #calcule le tf-idf de chaque mot de chaque fichier
 #print(tf1())
 def matrice():
    a=idf()
@@ -193,7 +196,7 @@ def matrice():
    return tab
 #print(matrice())
 
-
+#fais une matrice de tous les mots avec leur tf-idf dans chaque document
 
 
 def affichage_matrice(tab):
@@ -201,7 +204,7 @@ def affichage_matrice(tab):
         print(tab[i])
 tab=matrice()
 affichage_matrice(tab)
-                               
+ #affiche la matrice précédente                              
 def mot_pas_important():
     a=matrice()
     b=[]
@@ -215,7 +218,7 @@ def mot_pas_important():
             b.append(a[i][j+1])
     return b
 #print(mot_pas_important())
-
+#renvoir les mots les plus utilisés
 def mot_plus_important():
     a = matrice()
     b = []
@@ -229,7 +232,7 @@ def mot_plus_important():
             b.append(a[i][j + 1])
     return b
 print(mot_plus_important())
-
+#renvoie les mots les moins utilisés
 def fusion(d1,d2):
     f={}
     for cle,valeur in d1.items():
@@ -240,15 +243,17 @@ def fusion(d1,d2):
         else:
             f[cle2]=valeur
     return f
+    #fais la fusion de deux dictionnaires
 def chirac():
     a=test_tf()
     b=fusion(a[0],a[1])
-
+    
     print(b)
 chirac()
 directory = "./speeches"
 files_names = list_of_files(directory, "txt")
 print (files_names)
+    #renvoie les mots les plus prononcés par Chirac
 def nation():
     a=test_tf()
     imax=0
@@ -261,3 +266,5 @@ def nation():
     d=nom_president()
     return d[c]
 print(nation())
+    #renvoie le nom du président qui a le plus prononcé le mot nation
+    #on peut transformer cette fonction pour qu'elle marche avec n'importe quel mot si on rajoute un argument et qu'on remplace "nation" par l'argument
