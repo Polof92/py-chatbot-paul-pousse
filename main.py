@@ -247,7 +247,13 @@ def fusion(d1,d2):
 def chirac():
     a=test_tf()
     b=fusion(a[0],a[1])
-    
+    ivaleur=0
+    icle=0
+    for cle,valeur in b.items():
+        if valeur>ivaleur:
+            ivaleur=valeur
+            icle=cle
+    return b[cle]        
     print(b)
 chirac()
 directory = "./speeches"
