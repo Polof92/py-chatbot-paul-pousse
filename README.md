@@ -1,6 +1,6 @@
 # Ceci est un chatbot en python créer par PAUL Briac et POUSSE Guillaume 
-#Voici le lien vers le github :
-""" 
+Voici le lien vers le github :
+ 
 Ce bot peut effectuer toutes les fonctionnalitées demandées dans le TP à savoir :
 1. Afficher la liste des mots les moins importants dans le corpus de documents. Un mot est dit non important,
 si son TD-IDF = 0 dans tous les fichiers.
