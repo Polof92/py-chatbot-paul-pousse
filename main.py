@@ -1,6 +1,7 @@
 import os
 import math
 
+print('Patientez...')
 def list_of_files(directory, extension):
     files_names = []
     for filename in os.listdir(directory):
@@ -11,8 +12,7 @@ def list_of_files(directory, extension):
 
 directory = "./speeches"
 files_names = list_of_files(directory, "txt")
-print(files_names)
-#appel de la fonction 
+#appel de la fonction
 
 def nom_president():
     a = files_names
@@ -22,8 +22,7 @@ def nom_president():
             a[i] = a[i][:len(a[i])-1]
     return a
 tab = nom_president()
-print(tab)
-#créer une liste avec le nom des présidents 
+#créer une liste avec le nom des présidents
 
 
 def prenom(a):
@@ -40,9 +39,7 @@ def prenom(a):
             a[i] = "FrançoisM"
         if a[i] == "Sarkozy":
             a[i] = "Nicolas"
-    print(set(a))
-prenom(tab)
-#remplace leurs noms par leurs prénoms en elevant les doublons 
+#remplace leurs noms par leurs prénoms en elevant les doublons
 
 def convertir(f, f2):
     with open(f, "r",) as f3, open(f2, "w") as f4:
@@ -60,7 +57,6 @@ def convertir(f, f2):
 
 def fichier():
     a=os.listdir("./speeches")
-    print(a)
     b=[]
     for i in range(len(a)):
         c="Cleaned_"
@@ -68,7 +64,6 @@ def fichier():
             c+=a[i][j]
         b.append(c)
     return b
-print(fichier())
 #créer une liste avec le nom des fchiers qu'on a créé
 
 def del_pon(f):
@@ -88,8 +83,6 @@ def del_pon(f):
     return f3
 #enlève la ponctuation
 
-
-
 def creation():
     a=fichier()
     c=os.listdir("./speeches")
@@ -99,8 +92,8 @@ def creation():
         with open(b,"w") as f1:
             convertir(d,b)
             del_pon(b)
-creation()
 # enlève les majuscules
+
 def list_of_files2(directory, extension):
     files_names = []
     for filename in os.listdir(directory):
@@ -110,7 +103,7 @@ def list_of_files2(directory, extension):
 
 directory = "./cleaned"
 files_names2 = list_of_files2(directory, "txt")
-print (files_names2)
+
 
 def tf(f1):
     with open(f1,"r",encoding="utf-8") as f:
@@ -133,6 +126,7 @@ def tf(f1):
             d[b[i]]+=1
     return d
 #calcul le score TF
+
 def test_tf():
     a=0
     b=files_names2
@@ -140,7 +134,7 @@ def test_tf():
     for i in range(len(files_names2)):
         listd.append(tf("./cleaned/" + files_names2[i]))
     return listd
-print(test_tf())
+
 def idf_mot(mot):
     c=0
     a=test_tf()
@@ -164,20 +158,19 @@ def idf2():
     for i in range(len(b)):
         c.append(idf_mot(b[i]))
     return c
-#print(idf())
+
 
 def tf1():
     a=test_tf()
     b=idf()
     c=idf2()
-    print(b)
-    print(c)
     for i in range(len(b)):
         for j in range(len(a)):
             if b[i] in a[j]:
                 a[j][b[i]]=c[i]*a[j][b[i]]
     return a
-#print(tf1())
+
+
 def matrice():
    a=idf()
    tab=[]
@@ -191,13 +184,13 @@ def matrice():
                 tab[i].append(0.0)
        tab[i].append(a[i])
    return tab
-#print(matrice())
+#créer la matrice contenant tous les scores TF-IDF ainsi que le mot du score
 
 def affichage_matrice(tab):
     for i in range(len(tab)):
         print(tab[i])
 tab=matrice()
-affichage_matrice(tab)
+#permet l'affichage de la matrice contenant tous les scores TF-IDF ainsi que le mot du score
 
 def fonction_6():
     m = matrice()
@@ -207,5 +200,63 @@ def fonction_6():
             if (0.0 != m[i][j]) and (m[i][j] != '0.0'):
                 cpt = cpt + 1
                 if cpt == 8 and (len(m[i][j]) > 1):
-                    print(m[i][8])
-fonction_6()
+                    print(m[i][8], end = ', ')
+#affice les mits dit par tous les présidents sauf ceux pas importants
+def mot_pas_important():
+    a=matrice()
+    b=[]
+    for i in range(len(a)):
+        s=0
+        t=[]
+        for j in range(len(a[i])-1):
+           if a[i][j]!=0:
+               s+=a[i][j]
+        if s==0:
+            b.append(a[i][j+1])
+    return b
+#affiche les mots pas importants
+
+def mot_plus_important():
+    a = matrice()
+    b = []
+    for i in range(len(a)):
+        s = 0
+        t = []
+        for j in range(len(a[i]) - 1):
+            if a[i][j] != 0:
+                s += a[i][j]
+        if s >=2:
+            b.append(a[i][j + 1])
+    return b
+#affiche les mots les plus importants
+
+def fusion(d1,d2):
+    f={}
+    for cle,valeur in d1.items():
+        f[cle]=valeur
+    for cle2,valeur2 in d2.items():
+        if cle2 in f:
+            f[cle2]+=valeur2
+        else:
+            f[cle2]=valeur
+    return f
+#fusionne
+
+def chirac():
+    a=test_tf()
+    b=fusion(a[0],a[1])
+    return b
+directory = "./speeches"
+files_names = list_of_files(directory, "txt")
+
+def nation():
+    a=test_tf()
+    imax=0
+    c=-1
+    for i in range(len(a)):
+        for cle,valeur in a[i].items():
+            if 'nation' in a[i] and valeur>imax:
+                imax=valeur
+                c=i
+    d=nom_president()
+    return d[c]
