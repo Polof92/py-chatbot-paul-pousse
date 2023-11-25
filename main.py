@@ -188,7 +188,7 @@ def matrice():
             if a[i] in b[j]:
                 tab[i].append(b[j][a[i]])
             else:
-                tab[i].append(-1)
+                tab[i].append(0.0)
        tab[i].append(a[i])
    return tab
 #print(matrice())
@@ -199,3 +199,13 @@ def affichage_matrice(tab):
 tab=matrice()
 affichage_matrice(tab)
 
+def fonction_6():
+    m = matrice()
+    for i in range(len(m)):
+        cpt = 0
+        for j in range(len(m[i])):
+            if (0.0 != m[i][j]) and (m[i][j] != '0.0'):
+                cpt = cpt + 1
+                if cpt == 8 and (len(m[i][j]) > 1):
+                    print(m[i][8])
+fonction_6()
