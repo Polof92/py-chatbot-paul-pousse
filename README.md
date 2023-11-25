@@ -10,4 +10,4 @@ si son TD-IDF = 0 dans tous les fichiers.
 fois
 5. Indiquer le premier président à parler du climat et/ou de l’écologie
 6. Hormis les mots dits « non importants », quel(s) est(sont) le(s) mot(s) que tous les présidents ont évoqués
-7. """
+"""
