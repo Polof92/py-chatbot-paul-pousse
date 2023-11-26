@@ -253,8 +253,7 @@ def chirac():
         if valeur>ivaleur:
             ivaleur=valeur
             icle=cle
-    return b[cle]        
-    print(b)
+    return icle        
 chirac()
 directory = "./speeches"
 files_names = list_of_files(directory, "txt")
