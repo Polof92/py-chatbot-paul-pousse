@@ -253,10 +253,14 @@ def nation():
     a=test_tf()
     imax=0
     c=-1
+    d=tabpres
+    f=[]
+    for i in range(len(a)):
+        if 'nation' in a[i]:
+            f.append(d[i])
     for i in range(len(a)):
         for cle,valeur in a[i].items():
             if 'nation' in a[i] and valeur>imax:
                 imax=valeur
                 c=i
-    d=nom_president()
-    return d[c]
+    return set(f),d[c]
