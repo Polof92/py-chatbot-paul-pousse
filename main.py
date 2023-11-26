@@ -263,13 +263,17 @@ def nation():
     a=test_tf()
     imax=0
     c=-1
+    d = nom_president()
+    f=[]
+    for i in range(len(a)):
+        if 'nation' in a[i]:
+            f.append(d[i])
+
     for i in range(len(a)):
         for cle,valeur in a[i].items():
             if 'nation' in a[i] and valeur>imax:
                 imax=valeur
                 c=i
-    d=nom_president()
-    return d[c]
-print(nation())
+    return set(f),d[c]
     #renvoie le nom du président qui a le plus prononcé le mot nation
     #on peut transformer cette fonction pour qu'elle marche avec n'importe quel mot si on rajoute un argument et qu'on remplace "nation" par l'argument
