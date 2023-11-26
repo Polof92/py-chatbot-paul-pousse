@@ -21,8 +21,8 @@ def nom_president():
         if a[i][len(a[i])-1] == '1' or a[i][len(a[i])-1] == '2':
             a[i] = a[i][:len(a[i])-1]
     return a
-tab = nom_president()
-print(tab)
+tabpres = nom_president()
+print(tabpres)
 #créer une liste avec le nom des présidents 
 
 
@@ -41,7 +41,7 @@ def prenom(a):
         if a[i] == "Sarkozy":
             a[i] = "Nicolas"
     print(set(a))
-prenom(tab)
+#prenom(tabpres)
 #remplace leurs noms par leurs prénoms en elevant les doublons 
 
 def convertir(f, f2):
@@ -277,3 +277,38 @@ def nation():
     return set(f),d[c]
     #renvoie le nom du président qui a le plus prononcé le mot nation
     #on peut transformer cette fonction pour qu'elle marche avec n'importe quel mot si on rajoute un argument et qu'on remplace "nation" par l'argument
+
+def ecolo_1(f1):
+    with open(f1, "r", encoding="utf-8") as f:
+        d = {}
+        a = f.readlines()
+        b = []
+        for i in range(len(a)):
+            j = 0
+            while j < len(a[i]):
+                c = ""
+                while a[i][j] != " " and j < len(a[i]) - 1:
+                    c += a[i][j]
+                    j += 1
+                b.append(c)
+                j += 1
+    for i in range(len(b)):
+        if b[i]=="ecologie" or b[i]=='climat':
+            return i
+    return 99999
+directory = "./cleaned"
+files_names = list_of_files(directory, "txt")
+def ecolo_2():
+    a=files_names
+    b=[]
+    for i in range(len(a)):
+        b.append(ecolo_1("./cleaned/"+a[i]))
+    mini=b[0]
+    imin=0
+    for i in range(len(b)):
+        if b[i]<mini:
+            mini=b[i]
+            imin=i
+    c=tabpres
+    return c[i]
+print(ecolo_2())
