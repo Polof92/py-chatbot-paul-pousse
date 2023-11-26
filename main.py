@@ -245,10 +245,13 @@ def fusion(d1,d2):
 def chirac():
     a=test_tf()
     b=fusion(a[0],a[1])
-    return b
-directory = "./speeches"
-files_names = list_of_files(directory, "txt")
-
+    ivaleur=0
+    icle=0
+    for cle,valeur in b.items():
+        if valeur>ivaleur:
+            ivaleur=valeur
+            icle=cle
+    return icle
 def nation():
     a=test_tf()
     imax=0
