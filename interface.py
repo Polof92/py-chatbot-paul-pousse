@@ -45,6 +45,10 @@ def choix(selec):
         affichage()
         print("Voici les noms des présidents qui ont dit \'Nation\' et celui qui l'a répété le plus de fois :")
         print(main.nation())
+    elif selec=='5':
+        affichage()
+        print("Voici le premier président a parler d'écologie:")
+        print(main.ecolo_2())    
     elif selec == '6':
         affichage()
         print("Les mots ayant été dit par tous les présidents sont :")
