@@ -328,3 +328,24 @@ def ecolo_2():
     return c[i]
 print(ecolo_2())
 
+def question(q):
+    a = q.split()
+    b = ''
+    c = []
+    d = []
+    for i in range(len(a)):
+        for j in range(len(a[i])):
+            if a[i][j] != '\'' and a[i][j] != ',' and a[i][j] != ':' and a[i][j] != '.':
+                b += a[i][j]
+            else:
+                b += ' '
+        c.append(b)
+    for i in range(len(c)):
+        b = ''
+        for j in range(len(c[i])):
+            if ord(c[i][j]) <= 90 and ord(c[i][j]) >= 65:
+                b += chr(ord(c[i][j]) + 32)
+            else:
+                b += c[i][j]
+        d.append(b)
+    return d
