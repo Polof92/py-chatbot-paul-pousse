@@ -158,8 +158,7 @@ def idf2():
     for i in range(len(b)):
         c.append(idf_mot(b[i]))
     return c
-
-
+  
 def tf1():
     a=test_tf()
     b=idf()
@@ -202,6 +201,7 @@ def fonction_6():
                 if cpt == 8 and (len(m[i][j]) > 1):
                     print(m[i][8], end = ', ')
 #affice les mits dit par tous les présidents sauf ceux pas importants
+
 def mot_pas_important():
     a=matrice()
     b=[]
@@ -252,11 +252,17 @@ def chirac():
             ivaleur=valeur
             icle=cle
     return icle
+
+directory = "./speeches"
+files_names = list_of_files(directory, "txt")
+#renvoie les mots les plus prononcés par Chirac
+
 def nation():
     a=test_tf()
     imax=0
     c=-1
     d=tabpres
+    d = nom_president()
     f=[]
     for i in range(len(a)):
         if 'nation' in a[i]:
@@ -267,3 +273,59 @@ def nation():
                 imax=valeur
                 c=i
     return set(f),d[c]
+
+def ecolo_1(f1):
+    with open(f1, "r", encoding="utf-8") as f:
+        d = {}
+        a = f.readlines()
+        b = []
+        for i in range(len(a)):
+            j = 0
+            while j < len(a[i]):
+                c = ""
+                while a[i][j] != " " and j < len(a[i]) - 1:
+                    c += a[i][j]
+                    j += 1
+                b.append(c)
+                j += 1
+    for i in range(len(b)):
+        if b[i]=="ecologie" or b[i]=='climat':
+            return i
+    return 99999
+directory = "./cleaned"
+files_names = list_of_files(directory, "txt")
+def ecolo_2():
+    a=files_names
+    b=[]
+    for i in range(len(a)):
+        b.append(ecolo_1("./cleaned/"+a[i]))
+    mini=b[0]
+    imin=0
+    for i in range(len(b)):
+        if b[i]<mini:
+            mini=b[i]
+            imin=i
+    c=tabpres
+    return c[i]
+
+def question(q):
+    a = q.split()
+    b = ''
+    c = []
+    d = []
+    for i in range(len(a)):
+        for j in range(len(a[i])):
+            if a[i][j] != '\'' and a[i][j] != ',' and a[i][j] != ':' and a[i][j] != '.':
+                b += a[i][j]
+            else:
+                b += ' '
+        c.append(b)
+    for i in range(len(c)):
+        b = ''
+        for j in range(len(c[i])):
+            if ord(c[i][j]) <= 90 and ord(c[i][j]) >= 65:
+                b += chr(ord(c[i][j]) + 32)
+            else:
+                b += c[i][j]
+        d.append(b)
+    return d
