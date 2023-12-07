@@ -21,7 +21,6 @@ def nom_president():
         if a[i][len(a[i])-1] == '1' or a[i][len(a[i])-1] == '2':
             a[i] = a[i][:len(a[i])-1]
     return a
-tab = nom_president()
 tabpres = nom_president()
 #créer une liste avec le nom des présidents 
 
