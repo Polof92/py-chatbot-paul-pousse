@@ -160,7 +160,6 @@ def idf2():
     for i in range(len(b)):
         c.append(idf_mot(b[i]))
     return c
-#print(idf())
 #fais une liste de l'idf de tous les mots utilisés dans les fichiers sans doublons
 def tf1():
     a=test_tf()
@@ -206,8 +205,6 @@ def fonction_6():
                     print(m[i][8], end = ', ')
                     
 #affice les mots dit par tous les présidents sauf ceux pas importants
-affichage_matrice(tab)
- #affiche la matrice précédente                              
 
 def mot_pas_important():
     a=matrice()
@@ -262,21 +259,17 @@ def chirac():
             ivaleur=valeur
             icle=cle
     return icle
-      
-chirac()
+
 directory = "./speeches"
 files_names = list_of_files(directory, "txt")
-print (files_names)
-    #renvoie les mots les plus prononcés par Chirac
+#renvoie les mots les plus prononcés par Chirac
 
 def nation():
     a=test_tf()
     imax=0
     c=-1
     d=tabpres
-
     d = nom_president()
-
     f=[]
     for i in range(len(a)):
         if 'nation' in a[i]:
@@ -325,7 +318,6 @@ def ecolo_2():
             imin=i
     c=tabpres
     return c[i]
-print(ecolo_2())
 
 def question(q):
     a = q.split()
