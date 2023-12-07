@@ -22,7 +22,7 @@ def nom_president():
             a[i] = a[i][:len(a[i])-1]
     return a
 tabpres = nom_president()
-#créer une liste avec le nom des présidents 
+#créer une liste avec le nom des présidents
 
 
 def prenom(a):
@@ -143,7 +143,6 @@ def idf_mot(mot):
             c+=1
     c=math.log(1/(c/len(a)),10)
     return c
-    #fais l'idf d'un mot
 def idf():
     a=test_tf()
     b=[]
@@ -152,7 +151,6 @@ def idf():
             if cle not in b:
                 b.append(cle)
     return b
-    #fais une liste de tous les mots utilisés dans les fichiers sans doublons
 def idf2():
 
     c=[]
@@ -160,7 +158,7 @@ def idf2():
     for i in range(len(b)):
         c.append(idf_mot(b[i]))
     return c
-#fais une liste de l'idf de tous les mots utilisés dans les fichiers sans doublons
+  
 def tf1():
     a=test_tf()
     b=idf()
@@ -171,7 +169,7 @@ def tf1():
                 a[j][b[i]]=c[i]*a[j][b[i]]
     return a
 
-  
+
 def matrice():
    a=idf()
    tab=[]
@@ -186,7 +184,6 @@ def matrice():
        tab[i].append(a[i])
    return tab
 #créer la matrice contenant tous les scores TF-IDF ainsi que le mot du score
-
 
 def affichage_matrice(tab):
     for i in range(len(tab)):
@@ -203,8 +200,7 @@ def fonction_6():
                 cpt = cpt + 1
                 if cpt == 8 and (len(m[i][j]) > 1):
                     print(m[i][8], end = ', ')
-                    
-#affice les mots dit par tous les présidents sauf ceux pas importants
+#affice les mits dit par tous les présidents sauf ceux pas importants
 
 def mot_pas_important():
     a=matrice()
@@ -220,8 +216,6 @@ def mot_pas_important():
     return b
 #affiche les mots pas importants
 
-
-
 def mot_plus_important():
     a = matrice()
     b = []
@@ -236,7 +230,6 @@ def mot_plus_important():
     return b
 #affiche les mots les plus importants
 
-
 def fusion(d1,d2):
     f={}
     for cle,valeur in d1.items():
@@ -247,7 +240,7 @@ def fusion(d1,d2):
         else:
             f[cle2]=valeur
     return f
-    #fais la fusion de deux dictionnaires
+#fusionne
 
 def chirac():
     a=test_tf()
@@ -274,16 +267,12 @@ def nation():
     for i in range(len(a)):
         if 'nation' in a[i]:
             f.append(d[i])
-
     for i in range(len(a)):
         for cle,valeur in a[i].items():
             if 'nation' in a[i] and valeur>imax:
                 imax=valeur
                 c=i
     return set(f),d[c]
-  
-    #renvoie le nom du président qui a le plus prononcé le mot nation
-    #on peut transformer cette fonction pour qu'elle marche avec n'importe quel mot si on rajoute un argument et qu'on remplace "nation" par l'argument
 
 def ecolo_1(f1):
     with open(f1, "r", encoding="utf-8") as f:
