@@ -325,11 +325,13 @@ def question(q):
     c = []
     d = []
     for i in range(len(a)):
+        b = ''
         for j in range(len(a[i])):
             if a[i][j] != '\'' and a[i][j] != ',' and a[i][j] != ':' and a[i][j] != '.':
                 b += a[i][j]
-            else:
-                b += ' '
+            else :
+                b+=' '
+        b += ' '
         c.append(b)
     for i in range(len(c)):
         b = ''
@@ -339,4 +341,6 @@ def question(q):
             else:
                 b += c[i][j]
         d.append(b)
-    return d
+    b = ''.join(d)
+    b = b.split()
+    return b
