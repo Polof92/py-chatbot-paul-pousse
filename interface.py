@@ -20,6 +20,8 @@ def menu_principal():
     return selec
 #affiche les fonctionnalités et permet de renvoyer la séléction
 
+def stop():
+    print('Au revoir')
 def utilisation():
     selec = menu_principal()
     choix(selec)
@@ -56,9 +58,11 @@ def choix(selec):
 #affiche les choix et renvoie la séléction
 def retour():
     print(' ')
-    a = input('Si vous voulez accéder au menu principal vous n\'avez qu\'à écrire : \'Retour\' : ')
+    a = input('Si vous voulez accéder au menu principal vous n\'avez qu\'à écrire \'Retour\' et pour quittez entrez au revoir :' )
     if a == 'Retour':
         utilisation()
-#est a fonction qui revient en arrière
+    else :
+        stop()
+#est la fonction qui revient en arrière ou permet de d'arrêter le programme
 
 utilisation()

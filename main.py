@@ -254,11 +254,13 @@ def chirac():
     b=fusion(a[0],a[1])
     ivaleur=0
     icle=0
+    l = []
     for cle,valeur in b.items():
         if valeur>ivaleur:
             ivaleur=valeur
             icle=cle
-    return icle
+            l.append(icle)
+    return l
 
 directory = "./speeches"
 files_names = list_of_files(directory, "txt")
@@ -325,11 +327,13 @@ def question(q):
     c = []
     d = []
     for i in range(len(a)):
+        b = ''
         for j in range(len(a[i])):
             if a[i][j] != '\'' and a[i][j] != ',' and a[i][j] != ':' and a[i][j] != '.':
                 b += a[i][j]
-            else:
-                b += ' '
+            else :
+                b+=' '
+        b += ' '
         c.append(b)
     for i in range(len(c)):
         b = ''
@@ -339,4 +343,33 @@ def question(q):
             else:
                 b += c[i][j]
         d.append(b)
+    b = ''.join(d)
+    b = b.split()
+    return b
+
+def q_in_d(tab):
+    a=tf1()
+    b=[]
+    print(tab)
+    for i in range(len(tab)):
+        maxi=99999
+        d=None
+        for j in range(len(a)):
+            if tab[i] in a[j] and a[j][tab[i]]<maxi:
+                d=tabpres[j]
+                maxi=a[j][tab[i]]
+        b.append([d,maxi])
+    return b
+def tf_idf_q(q):
+    d = {}
+    for i in range(len(q)):
+        cpt = 0
+        b = q[i]
+        for j in range(len(q)):
+            if b == q[j]:
+                cpt += 1
+        if b not in d:
+            b = d[float(cpt)/float(len(q))]
     return d
+q = input('q = ')
+print(tf_idf_q(question(q)))
