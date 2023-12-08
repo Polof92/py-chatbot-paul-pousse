@@ -344,3 +344,20 @@ def question(q):
     b = ''.join(d)
     b = b.split()
     return b
+
+def q_in_d(tab):
+    a=tf1()
+    b=[]
+    print(tab)
+    for i in range(len(tab)):
+        maxi=99999
+        d=None
+        for j in range(len(a)):
+            if tab[i] in a[j] and a[j][tab[i]]<maxi:
+                d=tabpres[j]
+                maxi=a[j][tab[i]]
+        b.append([d,maxi])
+    return b
+
+
+print(q_in_d(question("j'aime les carottes et surtout la nation")))
