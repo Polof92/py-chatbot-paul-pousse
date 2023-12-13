@@ -360,6 +360,7 @@ def q_in_d(tab):
                 maxi=a[j][tab[i]]
         b.append([d,maxi])
     return b
+
 def tf_idf_q(q):
     d = {}
     for i in range(len(q)):
@@ -373,3 +374,4 @@ def tf_idf_q(q):
     return d
 q = input('q = ')
 print(tf_idf_q(question(q)))
+print(q_in_d(question("j'aime les carottes et surtout la nation")))
