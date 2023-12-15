@@ -410,4 +410,16 @@ def norme_vecteur(tab):
     return sqrt(c)
 
 a=[1,2,3,4,5]
-print(norme_vecteur(a))    
+print(norme_vecteur(a))
+
+def scalaire(a, b):
+    scal = 0
+    l = []
+    for i in range(len(a) - 1):
+        scal = 0
+        for j in range(len(a[i])):
+            scal += int(a[i][j])*int(b[i])
+        l.append(scal)
+    return l
+#calcul le produit scalaire de chaques lignes avec le vecteur de la question
+
