@@ -371,3 +371,14 @@ def transpose(tab):
             transp[i].append(tab[j][i])
     return transp
 #transpose la matrice où tous les mots du corpus sont asociés à leurs score TF-IDF
+
+def tf_q(q):
+    d = {}
+    for i in range(len(q)):
+        elem = q[i]
+        if elem not in d:
+            d[elem] = 1
+        else:
+            d[elem] += 1
+    return d
+#calcul le tf de la question
