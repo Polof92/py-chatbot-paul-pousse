@@ -393,3 +393,15 @@ def transpo(q):
     return a
 baba=transpo("j'aime les carottes et surtout la nation")
 affichage_matrice(transpose(baba))
+
+def tfidfq(q):
+    a=question(q)
+    d=[]
+    for elem in a:
+        if elem not in d:
+            d.append(elem)
+    b=[]
+    for i in range(len(d)):
+        b.append(tf_q(d[i],a))
+    return b
+print(tfidfq("j'aime les carottes et surtout la nation et j'aime la bite"))
