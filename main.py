@@ -401,3 +401,13 @@ def tfidfq(q):
     for i in range(len(d)):
         b.append(tf_q(d[i],a))
     return b
+def norme_vecteur(tab):
+    c=0
+    for i in range(len(tab)):
+        tab[i]=tab[i]**2
+    for i in range(len(tab)):
+        c+=tab[i]
+    return sqrt(c)
+
+a=[1,2,3,4,5]
+print(norme_vecteur(a))    
