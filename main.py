@@ -401,4 +401,3 @@ def tfidfq(q):
     for i in range(len(d)):
         b.append(tf_q(d[i],a))
     return b
-print(tfidfq("j'aime les carottes et surtout la nation et j'aime la bite"))
