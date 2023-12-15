@@ -382,3 +382,14 @@ def tf_q(q):
             d[elem] += 1
     return d
 #calcul le tf de la question
+
+def transpo(q):
+    b=question(q)
+    a=matrice()
+    for i in range(len(a)):
+        if a[i][-1] not in b:
+            for j in range(len(a[i])-1):
+                a[i][j]=0
+    return a
+baba=transpo("j'aime les carottes et surtout la nation")
+affichage_matrice(transpose(baba))
