@@ -305,8 +305,10 @@ def ecolo_1(f1):
         if b[i]=="ecologie" or b[i]=='climat':
             return i
     return 99999
+
 directory = "./cleaned"
 files_names = list_of_files(directory, "txt")
+
 def ecolo_2():
     a=files_names
     b=[]
@@ -346,7 +348,7 @@ def question(q):
     b = ''.join(d)
     b = b.split()
     return b
-
+#Nettoye la question, enlève les majuscules et la ponctuation
 def q_in_d(tab):
     a=tf1()
     b=[]
@@ -361,17 +363,11 @@ def q_in_d(tab):
         b.append([d,maxi])
     return b
 
-def tf_idf_q(q):
-    d = {}
-    for i in range(len(q)):
-        cpt = 0
-        b = q[i]
-        for j in range(len(q)):
-            if b == q[j]:
-                cpt += 1
-        if b not in d:
-            b = d[float(cpt)/float(len(q))]
-    return d
-q = input('q = ')
-print(tf_idf_q(question(q)))
-print(q_in_d(question("j'aime les carottes et surtout la nation")))
+def transpose(tab):
+    transp = []
+    for i in range(len(tab[0])):
+        transp.append([])
+        for j in range(len(tab)):
+            transp[i].append(tab[j][i])
+    return transp
+#transpose la matrice où tous les mots du corpus sont asociés à leurs score TF-IDF
