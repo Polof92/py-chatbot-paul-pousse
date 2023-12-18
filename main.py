@@ -436,3 +436,13 @@ def question_idf(a):
         b.append(idf_question(a[i]))
     return b
     #revoie matrice du tf_idf de chaque mot dans les docs de la question,prend en paramètre une liste avec toys les mots de la question:question(q)
+def scalaire(a, b):#a est la matrice et b la question
+    l = []
+    for i in range(len(a)):
+        scal = 0
+        for j in range(len(a[i])):
+            scal += a[i][j]*b[j]
+        l.append(scal)
+    return l
+q = question('J aime les carottes et surtout la nation')
+print(scalaire(question_idf(q), tfidfq(q)))
