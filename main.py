@@ -430,7 +430,8 @@ def idf_question(mot):
             return a[i][:len(a[i])-1]
     return []
     #renvoie le td-idf des docs d'un mot
-def question_idf(a):
+def question_idf(q):
+    a=question(q)
     b=[]
     for i in range(len(a)):
         b.append(idf_question(a[i]))
