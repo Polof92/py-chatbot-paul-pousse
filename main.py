@@ -455,14 +455,24 @@ def idf_question(mot):
                 b.append(0)
     return b
     
+def norme_tout(q):
+    a=question_idf(q)
+    b=[]
+    for i in range(len(a)):
+        b.append(norme_vecteur(a[i]))
+    return b
+normem=norme_tout(q)
 def similarite(scal, normeq): # nomrem est la norme de chaques ligne de la matrice avec que les mots correspondant
     l = []
     for i in range(len(scal)):
-        for j in range(len(scal[i])):
-            simil = float(scal[i])/(normem*normeq)
+        for j in range(len(normem)):
+            if normem[j]==0:
+                l.append(0)
+            else:
+                simil = float(scal[i])/float(normem[j]*float(normeq))
         l.append(simil)
     return l
-    q = 'J aime les olives et la nation et surtout les olives'
+q = 'J aime les olives et la nation et surtout les olives'
 scal = scalaire(question_idf(q), tfidfq(q))
 normeq = norme_vecteur(tfidfq(q))
 print(similarite(scal, normeq))
