@@ -423,12 +423,12 @@ def scalaire(a, b):
     return l
 #calcul le produit scalaire de chaques lignes avec le vecteur de la question
 def idf_question(mot):
-    a=matrice()
+    a=tab
     idfm=0
     for i in range(len(a)):
         if a[i][-1]==mot:
-            return a[i]
-    return -1
+            return a[i][:len(a[i])-1]
+    return []
     #renvoie le td-idf des docs d'un mot
 def question_idf(a):
     b=[]
