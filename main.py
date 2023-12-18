@@ -455,5 +455,5 @@ def idf_question(mot):
             if a[i][j]==mot:
                 b.append(a[i][j])
             else:
-                b.append([])
+                b.append(0)
     return b
