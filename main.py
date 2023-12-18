@@ -153,6 +153,7 @@ def idf():
                 b.append(cle)
     return b
     #fais une liste de tous les mots utilisés dans les fichiers sans doublons
+
 def idf2():
 
     c=[]
@@ -161,6 +162,7 @@ def idf2():
         c.append(idf_mot(b[i]))
     return c
 #fais une liste de l'idf de tous les mots utilisés dans les fichiers sans doublons
+
 def tf1():
     a=test_tf()
     b=idf()
@@ -171,7 +173,6 @@ def tf1():
                 a[j][b[i]]=c[i]*a[j][b[i]]
     return a
 
-  
 def matrice():
    a=idf()
    tab=[]
@@ -186,7 +187,6 @@ def matrice():
        tab[i].append(a[i])
    return tab
 #créer la matrice contenant tous les scores TF-IDF ainsi que le mot du score
-
 
 def affichage_matrice(tab):
     for i in range(len(tab)):
@@ -220,8 +220,6 @@ def mot_pas_important():
     return b
 #affiche les mots pas importants
 
-
-
 def mot_plus_important():
     a = matrice()
     b = []
@@ -236,7 +234,6 @@ def mot_plus_important():
     return b
 #affiche les mots les plus importants
 
-
 def fusion(d1,d2):
     f={}
     for cle,valeur in d1.items():
@@ -247,7 +244,7 @@ def fusion(d1,d2):
         else:
             f[cle2]=valeur
     return f
-    #fais la fusion de deux dictionnaires
+#fais la fusion de deux dictionnaires
 
 def chirac():
     a=test_tf()
@@ -284,8 +281,8 @@ def nation():
                 c=i
     return set(f),d[c]
   
-    #renvoie le nom du président qui a le plus prononcé le mot nation
-    #on peut transformer cette fonction pour qu'elle marche avec n'importe quel mot si on rajoute un argument et qu'on remplace "nation" par l'argument
+#renvoie le nom du président qui a le plus prononcé le mot nation
+#on peut transformer cette fonction pour qu'elle marche avec n'importe quel mot si on rajoute un argument et qu'on remplace "nation" par l'argument
 
 def ecolo_1(f1):
     with open(f1, "r", encoding="utf-8") as f:
