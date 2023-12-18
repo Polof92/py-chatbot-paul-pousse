@@ -422,7 +422,7 @@ def scalaire(a, b):
         l.append(scal)
     return l
 #calcul le produit scalaire de chaques lignes avec le vecteur de la question
-def idf_q(mot):
+def idf_question(mot):
     a=matrice()
     idfm=0
     for i in range(len(a)):
