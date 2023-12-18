@@ -420,20 +420,20 @@ def scalaire(a, b):
     return l
 #calcul le produit scalaire de chaques lignes avec le vecteur de la question
 def idf_question(mot):
-    a=tab
-    idfm=0
-    for i in range(len(a)):
-        if a[i][-1]==mot:
-            return a[i][:len(a[i])-1]
-    return []
-    #renvoie le td-idf des docs d'un mot
+    a=transpose(tab)
+    b=[]
+    for i in range(len(a)-1):
+        for j in range(len(a[i])):
+            if a[len(a)-1][j]==mot:
+                b.append(a[i][j])
+
+    return b
 def question_idf(q):
     a=question(q)
     b=[]
     for i in range(len(a)):
         b.append(idf_question(a[i]))
     return b
-    #revoie matrice du tf_idf de chaque mot dans les docs de la question,prend en paramètre une liste avec toys les mots de la question:question(q)
 def scalaire(a, b):#a est la matrice et b la question
     l = []
     for i in range(len(a)):
@@ -441,20 +441,10 @@ def scalaire(a, b):#a est la matrice et b la question
         for j in range(len(a[i])):
             scal += a[i][j]*b[j]
         l.append(scal)
+    print(l)
     return l
-q = question('J aime les carottes et surtout la nation')
-print(scalaire(question_idf(q), tfidfq(q)))
-def idf_question(mot):
-    a=transpose(tab)
-    b=[]
-    for i in range(len(a)-1):
-        for j in range(len(a[i]))
-            if a[i][j]==mot:
-                b.append(a[i][j])
-            else:
-                b.append(0)
-    return b
-    
+q = 'J aime les carottes et surtout la nation'
+#print(scalaire(question_idf(q), tfidfq(q)))
 def norme_tout(q):
     a=question_idf(q)
     b=[]
