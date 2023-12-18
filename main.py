@@ -430,3 +430,9 @@ def idf_q(mot):
             return a[i]
     return -1
     #renvoie le td-idf des docs d'un mot
+def question_idf(a):
+    b=[]
+    for i in range(len(a)):
+        b.append(idf_question(a[i]))
+    return b
+    #revoie matrice du tf_idf de chaque mot dans les docs de la question,prend en paramètre une liste avec toys les mots de la question:question(q)
