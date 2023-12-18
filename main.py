@@ -447,3 +447,13 @@ def scalaire(a, b):#a est la matrice et b la question
     return l
 q = question('J aime les carottes et surtout la nation')
 print(scalaire(question_idf(q), tfidfq(q)))
+def idf_question(mot):
+    a=transpose(tab)
+    b=[]
+    for i in range(len(a)-1):
+        for j in range(len(a[i]))
+            if a[i][j]==mot:
+                b.append(a[i][j])
+            else:
+                b.append([])
+    return b
