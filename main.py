@@ -426,6 +426,8 @@ def idf_question(mot):
         for j in range(len(a[i])):
             if a[len(a)-1][j]==mot:
                 b.append(a[i][j])
+    if b==[]:
+        return [0]*(len(a)-1)
 
     return b
 def question_idf(q):
@@ -441,7 +443,7 @@ def scalaire(a, b):#a est la matrice et b la question
         for j in range(len(a[i])):
             scal += a[i][j]*b[j]
         l.append(scal)
-    print(l)
+    #print(l)
     return l
 q = 'J aime les carottes et surtout la nation'
 #print(scalaire(question_idf(q), tfidfq(q)))
@@ -465,4 +467,30 @@ def similarite(scal, normeq): # nomrem est la norme de chaques ligne de la matri
 q = 'J aime les olives et la nation et surtout les olives'
 scal = scalaire(question_idf(q), tfidfq(q))
 normeq = norme_vecteur(tfidfq(q))
+#print(similarite(scal, normeq))
+
+def retour(mat):
+    j=0
+    k=0
+    matx=0
+    for i in range(len(mat)):
+        if mat[i]>matx:
+            matx=mat[i]
+            j=i
+    return j//8
+a=similarite(scal, normeq)
+print(retour(a))
+
+def maximum(mat,a,q):
+    b=question(q)
+    j=0
+    matmax=0
+    print(mat)
+    for i in range(len(mat)):
+        if mat[i][a]>matmax:
+            matmax=mat[i][a]
+            j=i
+    return b[j]
+print(maximum(question_idf(q),retour(a),q))
 print(similarite(scal, normeq))
+#le projet n'est pas fini
