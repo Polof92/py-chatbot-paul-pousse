@@ -385,8 +385,6 @@ def transpo(q):
             for j in range(len(a[i])-1):
                 a[i][j]=0
     return a
-baba=transpo("j'aime les carottes et surtout la nation")
-affichage_matrice(transpose(baba))
 
 def tfidfq(q):
     a=question(q)
@@ -406,9 +404,6 @@ def norme_vecteur(tab):
         c+=tab[i]
     return sqrt(c)
 
-a=[1,2,3,4,5]
-print(norme_vecteur(a))
-
 def scalaire(a, b):
     scal = 0
     l = []
@@ -419,6 +414,7 @@ def scalaire(a, b):
         l.append(scal)
     return l
 #calcul le produit scalaire de chaques lignes avec le vecteur de la question
+
 def idf_question(mot):
     a=transpose(tab)
     b=[]
@@ -430,6 +426,7 @@ def idf_question(mot):
         return [0]*(len(a)-1)
 
     return b
+
 def question_idf(q):
     a=question(q)
     b=[]
@@ -443,7 +440,6 @@ def scalaire(a, b):#a est la matrice et b la question
         for j in range(len(a[i])):
             scal += a[i][j]*b[j]
         l.append(scal)
-    #print(l)
     return l
 q = 'J aime les carottes et surtout la nation'
 #print(scalaire(question_idf(q), tfidfq(q)))
@@ -454,6 +450,7 @@ def norme_tout(q):
         b.append(norme_vecteur(a[i]))
     return b
 normem=norme_tout(q)
+
 def similarite(scal, normeq): # nomrem est la norme de chaques ligne de la matrice avec que les mots correspondant
     l = []
     for i in range(len(scal)):
@@ -478,8 +475,6 @@ def retour(mat):
             matx=mat[i]
             j=i
     return j//8
-a=similarite(scal, normeq)
-print(retour(a))
 
 def maximum(mat,a,q):
     b=question(q)
@@ -493,4 +488,4 @@ def maximum(mat,a,q):
     return b[j]
 print(maximum(question_idf(q),retour(a),q))
 print(similarite(scal, normeq))
-#le projet n'est pas fini
+#le projet n'a pas pu être terminé dans les temps
