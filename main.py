@@ -268,7 +268,6 @@ def nation():
     imax=0
     c=-1
     d=tabpres
-    d = nom_president()
     f=[]
     for i in range(len(a)):
         if 'nation' in a[i]:
